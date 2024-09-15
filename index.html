@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">TravelX</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <h1>Welcome to TravelX</h1>
+        <p>Your ultimate guide to discovering the best travel destinations. Whether you're seeking sun-soaked beaches, ancient temples, or vibrant cultures across the globe, we have personalized recommendations just for you. Start your next adventure with TravelX!</p>
+    </section>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Your Next Adventure Awaits</h1>
+            <p>Discover personalized travel recommendations tailored just for you.</p>
+            <form class="search-form" onsubmit="return searchRecommendations()">
+                <input type="text" id="search-input" placeholder="Enter 'beach', 'temple', or 'country'">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Beach Recommendations Section -->
+    <section id="beach-recommendations" class="recommendation-section" style="display: none;">
+        <h2>Beach Recommendations</h2>
+        <div class="recommendation-grid">
+            <div class="recommendation-item">
+                <img src="images/beach.jpg" alt="Beach 1">
+                <h3>Maldives</h3>
+                <p>Experience the crystal clear waters and pristine beaches of the Maldives.</p>
+            </div>
+            <div class="recommendation-item">
+                <img src="images/beach2.jpeg" alt="Beach 2">
+                <h3>Bora Bora</h3>
+                <p>Discover the breathtaking turquoise lagoons of Bora Bora.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temple Recommendations Section -->
+    <section id="temple-recommendations" class="recommendation-section" style="display: none;">
+        <h2>Temple Recommendations</h2>
+        <div class="recommendation-grid">
+            <div class="recommendation-item">
+                <img src="images/temple.jpg" alt="Temple 1">
+                <h3>Angkor Wat</h3>
+                <p>Visit the largest religious monument in the world in Cambodia.</p>
+            </div>
+            <div class="recommendation-item">
+                <img src="images/temple2.jpeg" alt="Temple 2">
+                <h3>Wat Pho</h3>
+                <p>Explore the famous reclining Buddha temple in Bangkok, Thailand.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Country-based Recommendations Section -->
+    <section id="country-recommendations" class="recommendation-section" style="display: none;">
+        <h2>Recommendations by Country</h2>
+        <div class="recommendation-grid">
+            <div class="recommendation-item">
+                <img src="images/country1.jpg" alt="Country 1">
+                <h3>Switzerland</h3>
+                <p>Explore the beautiful landscapes of Switzerland.</p>
+            </div>
+            <div class="recommendation-item">
+                <img src="images/country2.jpg" alt="Country 2">
+                <h3>India</h3>
+                <p>Discover the rich culture and heritage of India.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Follow Us on</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>© 2024 TravelX. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function searchRecommendations() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            document.getElementById('beach-recommendations').style.display = 'none';
+            document.getElementById('temple-recommendations').style.display = 'none';
+            document.getElementById('country-recommendations').style.display = 'none';
+
+            if (searchTerm.includes('beach')) {
+                document.getElementById('beach-recommendations').style.display = 'block';
+            } else if (searchTerm.includes('temple')) {
+                document.getElementById('temple-recommendations').style.display = 'block';
+            } else if (searchTerm.includes('country')) {
+                document.getElementById('country-recommendations').style.display = 'block';
+            }
+
+            return false;
+        }
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
